@@ -74,6 +74,7 @@ public class Main extends JavaPlugin {
             getServer().getScheduler().runTaskTimerAsynchronously((Plugin)this, new Snow(), ticks, ticks);
 
             if(fileConfig.getBoolean("types.christmas.music-play")) {
+                getServer().getPluginManager().registerEvents(new hyro.lib.listeners.Snow(), this);
                 Playlist playlist = new Playlist(NBSDecoder.parse(new File(getDataFolder().getPath()+"/music/1.nbs")));
                 for(int i = 1; i <= 5; i++) {
                     playlist.add(NBSDecoder.parse(new File(getDataFolder().getPath()+"/music/"+i+".nbs")));
