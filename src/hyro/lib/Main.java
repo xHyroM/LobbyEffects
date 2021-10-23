@@ -51,6 +51,9 @@ public class Main extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("§cNexusBlock by Hyro has been disabled §8(§c0.1.0§8)");
+        if(this.musicPlayer != null) {
+            this.musicPlayer.setPlaying(false);
+        }
     }
 
     private void createConfig() {
@@ -93,6 +96,9 @@ public class Main extends JavaPlugin {
 
         if(type.equalsIgnoreCase("halloween")) {
             getServer().getPluginManager().registerEvents(new Halloween(), this);
+            getServer().getWorlds().forEach((world) -> {
+                world.setTime(18000);
+            });
         }
     }
 }
