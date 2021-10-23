@@ -1,0 +1,20 @@
+selected-type: halloween
+
+global:
+  disable-damage: true
+  disable-hunger: true
+  disable-weather-change: true
+
+types:
+  christmas:
+    # Amout of particles around a player
+    count: 110
+    range: 40.0
+    music-play: true
+
+    # In seconds
+    every: 0.5
+  halloween:
+    effects:
+      - wither
+      - hunger
